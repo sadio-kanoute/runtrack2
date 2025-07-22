@@ -1,17 +1,20 @@
 <?php
-$largeur = 20;   // ← tu peux changer ici
-$hauteur = 10;   // ← et ici
+// Boucle de 2 à 1000
+for ($i = 2; $i <= 1000; $i++) {
+    $estPremier = true;
 
-
-// affiche un rectangle de largeur $largeur et de hauteur $hauteur
-// composé uniquement de caractères '*'
-// il parcour boucle jusqua la taille indiquée dan les variables
-// $largeur et $hauteur pour que sa soi moidifiable facilement
-// et affiche un * pour chaque itération de la boucle interne
-for ($i = 0; $i < $hauteur; $i++) {
-    for ($j = 0; $j < $largeur; $j++) {
-        echo "*";
+    // Teste tous les nombres de 2 à i - 1
+    for ($j = 2; $j < $i; $j++) {
+        if ($i % $j == 0) {
+            // Si on trouve un diviseur → pas un nombre premier
+            $estPremier = false;
+            break;
+        }
     }
-    echo "<br />";
+
+    // Si le nombre est premier, on l'affiche
+    if ($estPremier) {
+        echo $i . "<br />";
+    }
 }
 ?>
