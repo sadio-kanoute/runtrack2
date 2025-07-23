@@ -1,12 +1,18 @@
 <?php
-$hauteur = 5; 
+$hauteur = 5; // modifiable
 
-
-// I NOMBRE LIGNES // J NOMBRE ETOILES PAR LIGNE
 for ($i = 1; $i <= $hauteur; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
+    // espaces pour centrer
+    for ($j = 1; $j <= $hauteur - $i; $j++) {
+        echo "&nbsp;";
+    }
+
+    // étoiles
+    for ($k = 1; $k <= 2 * $i - 1; $k++) {
         echo "*";
     }
+
+    // nouvelle ligne
     echo "<br />";
 }
 ?>
