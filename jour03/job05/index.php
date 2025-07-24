@@ -1,20 +1,37 @@
 <?php
-// Boucle de 2 à 1000
-for ($i = 2; $i <= 1000; $i++) {
-    $estPremier = true;
-
-    // Teste tous les nombres de 2 à i - 1
-    for ($j = 2; $j < $i; $j++) {
-        if ($i % $j == 0) {
-            // Si on trouve un diviseur → pas un nombre premier
-            $estPremier = false;
-            break;
+$str = "On n’est pas le meilleur quand on le croit mais quand on le sait";
+$dic = [
+    "voyelles" => 0,
+    "consonnes" => 0
+];
+// On transforme tout en minuscules pour éviter les doublons
+$str = strtolower($str);
+// Parcours de la chaîne
+for ($i = 0; isset($str[$i]); $i++) {
+    $char = $str[$i];
+    
+    // Vérifier si c’est une lettre
+    if (ctype_alpha($char)) {
+        if (in_array($char, ['a', 'e', 'i', 'o', 'u', 'y'])) {
+            $dic["voyelles"]++;
+        } else {
+            $dic["consonnes"]++;
         }
-    }
-
-    // Si le nombre est premier, on l'affiche
-    if ($estPremier) {
-        echo $i . "<br />";
     }
 }
 ?>
+<!-- Affichage dans un tableau HTML -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Voyelles</th>
+            <th>Consonnes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?= $dic["voyelles"] ?></td>
+            <td><?= $dic["consonnes"] ?></td>
+        </tr>
+    </tbody>
+</table>

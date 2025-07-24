@@ -1,12 +1,19 @@
 <?php
-$hauteur = 5; 
+
+$str = "Certaines choses changent, et d'autres ne changeront jamais.";
 
 
-// I NOMBRE LIGNES // J NOMBRE ETOILES PAR LIGNE
-for ($i = 1; $i <= $hauteur; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo "*";
-    }
-    echo "<br />";
+$newStr = "";
+
+
+for ($i = 0; $i < strlen($str) - 1; $i++) {
+    // je prends le caractère suivant
+    $newStr .= $str[$i + 1];
 }
+
+// à la fin je rajoute le premier caractère à la fin
+$newStr .= $str[0];
+
+
+echo $newStr;
 ?>
