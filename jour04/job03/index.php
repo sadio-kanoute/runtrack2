@@ -15,7 +15,7 @@
   <input type="text" name="nom"><br><br>
 
   <label>Email :</label>
-  <input type="text" name="email"><br><br>
+  <input type="email" name="email" placeholder="Ton email ici" required><br>
 
   <input type="submit" value="Envoyer">
 </form>

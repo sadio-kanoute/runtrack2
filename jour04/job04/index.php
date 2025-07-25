@@ -68,7 +68,7 @@
     <input type="text" name="prenom"><br>
 
     <label>Email :</label><br>
-    <input type="text" name="email"><br>
+    <input type="email" name="email" placeholder="Ton email ici" required><br>
 
     <input type="submit" value="Envoyer">
   </form>

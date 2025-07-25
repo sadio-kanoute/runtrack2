@@ -1,0 +1,43 @@
+body {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #663399;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  width: 380px;
+  margin: 40px auto;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px rgba(102, 51, 153, 0.3);
+  text-align: center;
+}
+
+label {
+  font-weight: 700;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 15px;
+  color: #663399;
+}
+
+select, button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  border: 2px solid #663399;
+  font-size: 20px;
+  font-weight: bold;
+  color: #663399;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+button:hover {
+  background-color: #663399;
+  color: white;
+  border-color: #f9f9f9;
+}

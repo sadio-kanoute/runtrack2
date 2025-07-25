@@ -1,5 +1,5 @@
 <?php
-// creation variables et affichage
+
 $str = "LaPlateforme";
 echo $str . "<br>";
 

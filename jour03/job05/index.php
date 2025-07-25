@@ -1,26 +1,34 @@
 <?php
-$str = "On n’est pas le meilleur quand on le croit mais quand on le sait";
-$dic = [
+// Création de la variable $str avec le texte demandé
+$str = "On n'est pas le meilleur quand on le croit mais quand on le sait";
+
+// Création d'un dictionnaire associatif avec les clés "voyelles" et "consonnes"
+$dic = [ 
     "voyelles" => 0,
     "consonnes" => 0
 ];
-// On transforme tout en minuscules pour éviter les doublons
+
+// strtolower() → transforme tout en minuscules pour simplifier les comparaisons
 $str = strtolower($str);
-// Parcours de la chaîne
+
+// Parcours de chaque caractère
 for ($i = 0; isset($str[$i]); $i++) {
     $char = $str[$i];
-    
-    // Vérifier si c’est une lettre
+
+    // Vérifie si c'est une lettre (pas un espace, une ponctuation, etc.)
     if (ctype_alpha($char)) {
+
+        // Si la lettre est dans le tableau des voyelles
         if (in_array($char, ['a', 'e', 'i', 'o', 'u', 'y'])) {
-            $dic["voyelles"]++;
+            $dic["voyelles"]++; // On compte comme voyelle
         } else {
-            $dic["consonnes"]++;
+            $dic["consonnes"]++; // Sinon c’est une consonne
         }
     }
 }
 ?>
-<!-- Affichage dans un tableau HTML -->
+
+<!-- Affichage HTML -->
 <table border="1">
     <thead>
         <tr>
@@ -30,8 +38,12 @@ for ($i = 0; isset($str[$i]); $i++) {
     </thead>
     <tbody>
         <tr>
-            <td><?= $dic["voyelles"] ?></td>
-            <td><?= $dic["consonnes"] ?></td>
+            <!-- <?= ... ?> est la version courte de <?php echo ... ?> -->
+            <!-- Les deux lignes ci-dessous font la même chose : -->
+
+            <td><?= $dic["voyelles"] ?></td> <!-- version courte -->
+
+            <td><?php echo $dic["consonnes"]; ?></td> <!-- version classique -->
         </tr>
     </tbody>
 </table>

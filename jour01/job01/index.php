@@ -1,5 +1,5 @@
 <?php
-// Partie 1 : Chaînes de caractères
+//  $ pour creer une variable et cella-ci est de type texte
 $str = "LaPlateforme";
 echo $str . "<br>";
 
@@ -7,14 +7,14 @@ $str2 = "Vive";
 $str3 = "!";
 echo $str2 . " " . $str . " " . $str3 . "<br>";
 
-// Partie 2 : Variables numériques
+// Variables numériques
 $val = 6;
 echo $val . "<br>";
 
 $val += 4;
 echo $val . "<br>";
 
-// Partie 3 : Booléens
+// Variables Booléens true ou false 0 ou 1 ETC..
 $myBool = true;
 echo $myBool . "<br>";
 
