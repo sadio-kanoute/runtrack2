@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (isset($_POST['reset'])) {
@@ -108,8 +107,9 @@ if (isset($_POST['case']) && $_SESSION['fini'] === false) {
         }
 
         .reset-btn {
-            margin-top: 15px;
-            padding: 10px 20px;
+            width: auto;           
+            height: auto;          
+            padding: 8px 16px;
             font-size: 1em;
             background-color: #e53935;
             border: none;
@@ -117,11 +117,14 @@ if (isset($_POST['case']) && $_SESSION['fini'] === false) {
             cursor: pointer;
             border-radius: 5px;
             transition: background 0.3s;
-        }
+}
+
 
         .reset-btn:hover {
             background-color: #c62828;
         }
+
+
     </style>
 </head>
 <body>
@@ -150,9 +153,13 @@ if (isset($_POST['case']) && $_SESSION['fini'] === false) {
         </tr>
     </table>
 
-    <form method="post">
-        <button type="submit" name="reset" class="reset-btn">Réinitialiser la partie</button>
-    </form>
+        <div class="reset-container">
+            <form method="post">
+                <button type="submit" name="reset" class="reset-btn">Réinitialiser</button>
+            </form>
+        </div>
+
+
 
 </body>
 </html>
