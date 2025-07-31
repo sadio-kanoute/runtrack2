@@ -51,14 +51,8 @@
 
   <?php
 
-  $mysqli = new mysqli("localhost", "root", "", "jour09");
-
-  if ($mysqli->connect_error) {
-    die("Erreur de connexion : " . $mysqli->connect_error);
-  }
-
-  
-  $query = "SELECT salles.nom AS salle, etage.nom AS etage 
+    require_once '../connexion.php';
+     $query = "SELECT salles.nom AS salle, etage.nom AS etage 
             FROM salles 
             INNER JOIN etage ON salles.id_etage = etage.id";
 

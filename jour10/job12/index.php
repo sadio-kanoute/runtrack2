@@ -51,19 +51,13 @@
   <h1>Étudiants nés entre 1998 et 2018</h1>
 
   <?php
-  // Connexion à la base de données
-  $mysqli = new mysqli("localhost", "root", "", "jour09");
+  require_once '../connexion.php';
 
-  // Vérifie la connexion
-  if ($mysqli->connect_error) {
-    die("Erreur de connexion : " . $mysqli->connect_error);
-  }
-
-  // Requête SQL
+  
   $query = "SELECT prenom, nom, naissance FROM etudiants WHERE naissance BETWEEN '1998-01-01' AND '2018-12-31'";
   $result = $mysqli->query($query);
 
-  // Affichage du tableau
+  
   if ($result && $result->num_rows > 0) {
     echo "<table>";
     echo "<thead>
@@ -87,7 +81,7 @@
     echo "Aucun étudiant trouvé dans cette tranche de dates.";
   }
 
-  // Fermeture connexion
+  
   $mysqli->close();
   ?>
 
